@@ -8,7 +8,10 @@ export default function Nav(){
             <div className="Nav-container">
                 <div className="Nav-bar">
                     <div className="Nav-main">
-                        <img src="https://about.tiny.cloud/wp-content/uploads/2018/07/tiny-color-ondark-rgb.svg" alt=""/>
+                        <a className="w-img" href="https://www.tiny.cloud/">
+                            <img className="img_default" src="https://about.tiny.cloud/wp-content/uploads/2018/07/tiny-color-onlight-rgb.svg" alt=""/>
+                            <img className="img_transparant" src="https://about.tiny.cloud/wp-content/uploads/2018/07/tiny-color-ondark-rgb.svg" alt=""/>
+                        </a>
                         <div className="Nav-items">
                             <div className="Nav-item">Products  ⌄</div>
                             <div className="Nav-item">Support  ⌄</div>
@@ -30,24 +33,32 @@ export default function Nav(){
 }
 
 const NavStyle = styled.div`
-height: 68px;
 display:flex;
+// background-color: transparant;
+background: linear-gradient(rgba(0,0,0,.5),transparent) repeat-x;
+min-width: 0!important;
 justify-content: center;
+height: 68px;
     .Nav-container{
         padding: 0 40px;
-        height: 80px;
         display: flex;
+        background-color: transparent;
+        height: 80px;
+        align-items: center;
+        align-content:center;
     }
 
     .Nav-bar{
         max-width: 1100px;
-        display: flex;
         align-items: center;
-        // flex-grow:1;
-        // flex-shrink: 0;
-        margin: 0 auto;
+        align-content: center;
+        // margin: 0 auto;
+        display: flex;
         justify-content: center;
-        
+        color:#d3e3f3;
+        height: inherit;
+        position: relative;
+        margin: 0 auto;
 
     }
     .Nav-main{
@@ -56,7 +67,6 @@ justify-content: center;
         justify-content: flex-start;
         flex: 1 0 610px;
         height: 50px;
-
     }
     .Nav-login{
         display: flex;
@@ -69,9 +79,24 @@ justify-content: center;
     .Nav-item{
         padding: 0 15px;
     }
-    img{
+    w-img{
         display: block;
         height: inherit;
+        width: auto;
+    }
+    img{
+        height: 30px;
         margin-right: 20px;
+        display: block;
+        
+    }
+    .img_default{
+        display: none;
+    }
+    .Nav-login-items{
+        display: flex;
+        span{
+            margin-right: 20px;
+        }
     }
 `
